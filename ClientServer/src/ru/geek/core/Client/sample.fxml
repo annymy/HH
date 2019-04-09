@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox fx:controller="ru.geek.core.Client.Controller"
+      xmlns:fx="http://javafx.com/fxml" alignment="center">
+    <VBox HBox.hgrow="ALWAYS">
+        <HBox fx:id="authPanel">
+            <TextField fx:id="loginField" promptText="Логин" HBox.hgrow="ALWAYS"/>
+            <PasswordField fx:id="passField" promptText="Пароль"/>
+            <Button text="LogIn" onAction="#sendAuthMsg"/>
+        </HBox>
+        <TextArea fx:id="textArea" VBox.vgrow="ALWAYS" editable="false"/>
+        <HBox fx:id="msgPanel">
+            <TextField fx:id="msgField" promptText="Введите сообщение" HBox.hgrow="ALWAYS" onAction="#sendMsg"/>
+            <Button text="Send msg" onAction="#sendMsg"/>
+        </HBox>
+    </VBox>
+    <ListView fx:id="clientsListView" minWidth="200" onMouseClicked="#clientsListCllicked"/>
+</HBox>
